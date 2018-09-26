@@ -131,6 +131,7 @@ def create_app(agent,
     """Class representing a Rasa Core HTTP server."""
 
     app = Flask(__name__)
+    app.config['JSON_AS_ASCII'] = False
     CORS(app, resources={r"/*": {"origins": "*"}})
     cors_origins = cors_origins or []
 
